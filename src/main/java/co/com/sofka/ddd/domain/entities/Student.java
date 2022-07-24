@@ -23,6 +23,51 @@ public class Student extends Entity<StudentIdentity> {
 
     public static Student from(StudentIdentity studentIdentity, Name name, Gender gender, DateOfBirth dateOfBirth){
         var student = new Student(studentIdentity);
+        student.name = name;
+        student.gender = gender;
+        student.dateOfBirth=dateOfBirth;
+        return student;
+    }
 
+    public String name(){
+        return name.value();
+    }
+
+    public String gender(){
+        return gender.value();
+    }
+    public String dateOfBirth() {
+        return dateOfBirth.value();
+    }
+
+//TODO Revisar por qué no funciona el VALUES
+    /* public Score.Values score(){
+        return score.value();
+    }*/
+
+    public void updateScore(Score score){
+        this.score = score;
+    }
+
+    public void updateName(Name name){
+        this.name = name;
+    }
+
+    public void updateDateOfBirth(DateOfBirth dateOfBirth){ //(5)
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void updateGender(Gender gender){
+        this.gender = gender;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }
